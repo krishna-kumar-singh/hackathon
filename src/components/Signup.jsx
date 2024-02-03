@@ -82,27 +82,48 @@ function Signup() {
         <div className='w-full'>
            
         
-           <div
+           {authStatus? (<div
         className='mt-0 ml-0 mr-0 div1 bg-cover bg-center h-[500px] relative'
         style={{
-          backgroundImage: 'url(https://www.usnews.com/cmsmedia/65/cc/5e8e982e408db701f9e4725c88f5/210503-computerprogrammer-stock.jpg)',
+          backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
         }}
       >
-        <h1 className='absolute text-amber-300 text-3xl font-bold mt-48 ml-16'>
-        Elevate Your Career with Us:  
+        <h1 className='absolute text-white text-3xl font-bold mt-48 ml-16'>
+        Navigate Emergencies, Save Lives:   
         </h1>
         
-        <h1 className='absolute text-amber-300 text-3xl font-bold mt-60 ml-16'>
-        Where Opportunities Meet Aspirations!
+        <h1 className='absolute text-white text-3xl font-bold mt-60 ml-16'>
+        Your Trusted Ambulance Dashboard for Swift and Reliable Response!
         </h1>
         
+      </div>):(<div
+        className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] relative'
+        style={{
+          backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
+        }}
+      >
+        <h1 className='absolute text-white text-3xl font-bold mt-48 ml-16'>
+        Navigate Emergencies, Save Lives:   
+        </h1>
+        
+        <h1 className='absolute text-white text-3xl font-bold mt-60 ml-16'>
+        Your Trusted Ambulance Dashboard for Swift and Reliable Response!
+        </h1>
+        
+      </div>)}
+
+           
+      {authStatus && (<section className="py-12 mb-16  bg-blue-400">
+      <div className="container mx-auto text-center text-white">
+        <h1 className="text-4xl font-bold mb-4 font-serif">Explore Your Dashboard</h1>
+        <p className="text-lg">Discover personalized features and content tailored just for you.</p>
       </div>
-    
-          {/* Flex container for Collection Request, Points, and Reward System */}
-          <div className='flex justify-around mx-10 mb-16'>
-          <PointSection
+    </section>)}
+      {/* Flex container for Collection Request, Points, and Reward System */}
+      <div className='flex justify-around mx-10 mb-16'>
+        <PointSection
           icon={<FaHome size={80} color={hovered1 ? 'white' : 'green'} />}
-          title='Enrollment'
+          title='Tragedy form'
           description='Enrollment for job.'
           hovered={hovered1}
           handleHover={handleHover1}
@@ -110,69 +131,66 @@ function Signup() {
           to={authStatus? "post" : "login"}
         />
 
-        <PointSection
-          icon={<PiHandCoinsFill size={80} color={hovered2 ? 'white' : 'green'} />}
-          title='Recruitment'
-          description='Recruit employee for your company'
-          hovered={hovered2}
-          handleHover={handleHover2}
-          handleLeave={handleLeave2}
-          to={authStatus?"recruitment":'login'}
+        
+
+
+        
+      </div>
+
+
+      <div className='bg-amber-400 px-64 pb-28 pt-16'>
+        <h1 className='text-center font-bold text-4xl mb-6 font-serif'>Our Service</h1>
+        <h1 className='text-2xl text-center'>At EPIC, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives</h1>
+      </div>
+
+
+      {/* guide */}
+
+      {!authStatus && (
+        <section className="text-black mx-28 my-16">
+          <div className="container  text-center">
+            {/* Catchy headline */}
+            <h1 className="text-4xl font-bold mb-4 font-serif">Rapid Emergency Response</h1>
+
+            {/* Brief introduction */}
+            <p className="text-lg">In critical moments, every second counts. Experience swift and reliable emergency response with our ambulance service. We are here to provide immediate assistance and save lives during accidents.</p>
+
+            {/* Call-to-Action button */}
+            {!authStatus && (
+              <Link to="/signup">
+                <button className="bg-yellow-500 font-bold font-serif text-2xl text-gray-800 px-6 py-2 mt-4 rounded-full">
+                  Request Ambulance
+                </button>
+              </Link>
+            )}
+          </div>
+        </section>
+      )}
+
+
+
+    <hr />
+
+{/*  */}
+
+      <div className='justify-between flex mx-16 mt-16 mb-10'>       
+        <Card 
+          title={'Swift Emergency Response'}
+          content={'Experience rapid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
         />
-          </div>
-    
-    
-          <div className='bg-amber-400 px-64 pb-28 pt-16'>
-            <h1 className='text-center font-bold text-4xl mb-6 font-serif'>Our Service</h1>
-            <h1 className='text-2xl text-center'>Our services cater to both job seekers and employers, offering streamlined enrollment for individuals seeking their dream job and efficient recruitment solutions for companies of all sizes. Job seekers benefit from personalized job matching, career resources, and guidance. Employers enjoy simplified hiring processes with access to a pool of qualified candidates and advanced recruitment tools. Join us in redefining the future of recruitment and employment – where opportunities meet aspirations seamlessly.</h1>
-          </div>
-    
-    
-          {/* guide */}
-          {!authStatus && (
-            <section className="text-black py-16">
-              <div className="container mx-auto text-center">
-                {/* Catchy headline */}
-                <h1 className="text-4xl font-bold mb-4 font-serif">Boost Your Career with Us!</h1>
-
-                {/* Brief introduction */}
-                <p className="text-lg">Explore new opportunities and take your career to the next level. Join our community, connect with top employers, and embark on a journey of professional growth!</p>
-
-                {/* Call-to-Action button */}
-                {!authStatus && (
-                  <Link to="/signup">
-                    <button className="bg-yellow-500 font-bold font-serif text-2xl text-gray-800 px-6 py-2 mt-4 rounded-full">
-                      Get Started
-                    </button>
-                  </Link>
-                )}
-              </div>
-            </section>
-          )}
-    
-          
-        <hr />
-    
-    
-    
-        <div className='justify-between flex mx-16 mt-16 mb-10'>       
-          <Card 
-            title={'Unlock Opportunities'}
-            content={'Discover your potential with our job placement services. We specialize in connecting talented individuals with rewarding career opportunities across various industries.'}
-          />
-          <Card 
-            title={'Passion-Driven Placements'}
-            content={"Job satisfaction is not just a goal; it's a reality. Our platform focuses on finding roles that not only match your skills but also align with your passions and career aspirations."}
-          />
-          
-          <Card 
-            title={'Holistic Job Satisfaction'}
-            content={"Choosing the right job isn't just about salary; it's about finding a workplace culture that values your contributions. Our services prioritize your holistic job satisfaction."}
-          />
-          <Card 
-            title={'Career Navigation Hub'}
-            content={"Navigate your career path with confidence. Our job resources and expert guidance empower you to make informed decisions for a fulfilling professional journey."}
-          />
+        <Card 
+          title={'Dedicated Ambulance Crew'}
+          content={"Our skilled and compassionate ambulance crews are committed to your well-being. With a focus on professionalism and care, we ensure that you receive the support you need during emergencies."}
+        />
+        
+        <Card 
+          title={'Emergency Care Beyond Boundaries'}
+          content={"We go beyond traditional ambulance services, offering comprehensive emergency care. Your health and safety are paramount, and our services are designed to provide holistic support during accidents."}
+        />
+        <Card 
+          title={'Expert Guidance in Crisis'}
+          content={"Navigate through emergencies confidently with our expert guidance. Our resources and trained professionals empower you to make informed decisions during challenging situations for a secure journey to recovery."}
+        />
       </div>
 
 

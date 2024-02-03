@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import { useSelector } from 'react-redux';
-import ProductCart from './ProductCart';
+import TragedyOccurCard from './tragedyOccurCard';
+
 
 function Requests() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -32,7 +33,7 @@ function Requests() {
     <div className='flex flex-col'>
       {posts.map((post) => (
         <div key={post.$id} className='p-2 w-full'>
-          <ProductCart
+          <TragedyOccurCard
             patientName={post.patientName}
             date={post.date}
             qualification={post.qualification}

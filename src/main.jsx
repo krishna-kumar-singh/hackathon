@@ -11,6 +11,10 @@ import {Welcome} from './components/Welcome.jsx'
 import {Signup} from './components/index.js'
 import {PostForm} from './components/post-form/PostForm.jsx'
 import {ContactUs} from './components/ContactUs.jsx'
+import Requests from './components/Requests.jsx'
+// import RecuiterForm from './components/post-form/RecuiterForm.jsx'
+// import RecuitmentApplications from './components/RecuitmentApplications.jsx'
+
 const router = createBrowserRouter(
   [
     {
@@ -55,8 +59,12 @@ const router = createBrowserRouter(
             <ContactUs/>
           )
         },
-        
-        
+        {
+          path:'/requests',
+          element:(
+            <Requests/>
+          )
+        },
         // {
         //   path:'/all-posts',
         //   element:(

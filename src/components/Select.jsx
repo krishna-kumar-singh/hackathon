@@ -5,7 +5,7 @@ export const Select = forwardRef(({ options, className, label, ...props }, ref) 
 
   return (
     <div className="w-full">
-      {label && <label className="" htmlFor={id}></label>}
+      {label && <label className="" htmlFor={id}>{label}</label>}
       <select
         {...props}
         id={id}

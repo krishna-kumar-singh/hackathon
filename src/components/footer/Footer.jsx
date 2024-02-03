@@ -9,7 +9,7 @@ export function Footer() {
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
-                        <Link to="/" className="flex text-4xl font-bold font-serif items-center">
+                        <Link to="/" className="flex text-green-500 text-4xl font-bold font-serif items-center">
                         Life Assist
                         </Link>
                     </div>

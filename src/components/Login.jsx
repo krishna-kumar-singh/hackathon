@@ -80,11 +80,11 @@ function Login() {
           backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
         }}
       >
-        <h1 className='absolute text-white text-3xl font-bold mt-48 ml-16'>
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-48 ml-16'>
         Navigate Emergencies, Save Lives:   
         </h1>
         
-        <h1 className='absolute text-white text-3xl font-bold mt-60 ml-16'>
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-16'>
         Your Trusted Ambulance Dashboard for Swift and Reliable Response!
         </h1>
         
@@ -94,11 +94,11 @@ function Login() {
           backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
         }}
       >
-        <h1 className='absolute text-white text-3xl font-bold mt-48 ml-16'>
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-48 ml-16'>
         Navigate Emergencies, Save Lives:   
         </h1>
         
-        <h1 className='absolute text-white text-3xl font-bold mt-60 ml-16'>
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-16'>
         Your Trusted Ambulance Dashboard for Swift and Reliable Response!
         </h1>
         
@@ -136,7 +136,7 @@ function Login() {
 
       <div className='bg-amber-400 px-64 pb-28 pt-16'>
         <h1 className='text-center font-bold text-4xl mb-6 font-serif'>Our Service</h1>
-        <h1 className='text-2xl text-center'>At EPIC, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives</h1>
+        <h1 className='text-2xl text-center'>At Life-Assist, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives</h1>
       </div>
 
 
@@ -220,7 +220,7 @@ function Login() {
                         eye={<div className='w-[25px]' onClick={handlePass}><img className='cursor-pointer' src={passText?"https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png":'https://static.thenounproject.com/png/777494-200.png'} alt="" /></div>}
                     />
                     {/* Using the Button component */}
-                    <Button type="submit" className="w-100 bg-blue-500  transition-all duration-300 ease-out hover:bg-blue-700 hover:text-white hover:border-primary hover:p-2 hover:rounded-md hover:border-2 ">
+                    <Button type="submit" className="w-100 bg-blue-500 hover:bg-blue-600 hover:text-white hover:border-primary hover:rounded-md">
                         Sign in
                     </Button>
                 </div>

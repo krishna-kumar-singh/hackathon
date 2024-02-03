@@ -35,6 +35,7 @@ export function Welcome() {
     setHovered3(true);
   };
 
+  
   const handleLeave3 = () => {
     setHovered3(false);
   };

@@ -234,7 +234,7 @@ function Signup() {
 
               <Button
                 type='submit'
-                className='w-100 bg-blue-500  transition-all duration-300 ease-out hover:bg-blue-700 hover:text-white hover:border-primary hover:p-2 hover:rounded-md hover:border-2'
+                className='w-100 bg-blue-500 hover:bg-blue-600 hover:text-white hover:border-primary hover:rounded-md '
               >
                 Create Account
               </Button>

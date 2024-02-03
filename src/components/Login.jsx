@@ -220,7 +220,7 @@ function Login() {
                         eye={<div className='w-[25px]' onClick={handlePass}><img className='cursor-pointer' src={passText?"https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png":'https://static.thenounproject.com/png/777494-200.png'} alt="" /></div>}
                     />
                     {/* Using the Button component */}
-                    <Button type="submit" className="w-100 bg-blue-500  transition-all duration-300 ease-out hover:bg-blue-700 hover:text-white hover:border-primary hover:p-2 hover:rounded-md hover:border-2 ">
+                    <Button type="submit" className="w-100 bg-blue-500 hover:bg-blue-600 hover:text-white hover:border-primary hover:rounded-md">
                         Sign in
                     </Button>
                 </div>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 
+//creating a form for patient to inform the ambulance driver more about the tragedy.
+
 import { Select } from "../Select";
 export function PostForm() {
   const [patientName, setPatientName] = useState(null);

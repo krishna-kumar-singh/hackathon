@@ -1,4 +1,4 @@
-// try to get longitude and latitude of user
+// trying to get longitude and latitude of user
 export function getCurrentLocation() {
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(

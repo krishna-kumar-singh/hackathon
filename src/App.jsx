@@ -1,7 +1,3 @@
-// import { useEffect, useState } from "react"
-// import {useDispatch} from 'react-redux'
-// import authService from "./appwrite/auth"
-// import {login,logout} from './store/authSlice'
 import {Outlet} from 'react-router-dom'
 import {Footer } from './components/index'
 import Navbar from './components/header/Navbar'

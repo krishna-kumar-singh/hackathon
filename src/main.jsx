@@ -14,6 +14,8 @@ import {ContactUs} from './components/ContactUs.jsx'
 import Requests from './components/Requests.jsx'
 import AmbulanceDriverForm from './components/post-form/AmbulanceDriverForm.jsx'
 import AmbulanceAvailability from './components/AmbulanceAvailability.jsx'
+// creating route to change the layout structure of web app.
+//Defining elements and their paths.
 const router = createBrowserRouter(
   [
     {
@@ -76,27 +78,6 @@ const router = createBrowserRouter(
             <AmbulanceAvailability/>
           )
         },
-        // {
-        //   path:'/all-posts',
-        //   element:(
-        //     <Protected authentication>
-        //       <AllPost/>
-        //     </Protected>
-        //   ) 
-        // },
-        // {
-        //   path:'/add-post',
-        //   element:(
-        //     <Protected authentication>
-        //       {' '}
-        //       <AddPost/>
-        //     </Protected>
-        //   ) 
-        // },
-        // {
-        //   path:'/post/:slug',
-        //   element:<Post/>
-        // }
       ]
     }
   ]

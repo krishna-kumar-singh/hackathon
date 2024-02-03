@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.css';
-import { Link } from 'react-router-dom';
+//Creating button to use globally.
 
 export function Button({children,className=''}) {
   return (

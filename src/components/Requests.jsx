@@ -3,6 +3,8 @@ import service from '../appwrite/config';
 import { useSelector } from 'react-redux';
 import TragedyOccurCard from './tragedyOccurCard';
 
+//Rendering request for patient done by user.
+
 
 function Requests() {
   const authStatus = useSelector((state) => state.auth.status);

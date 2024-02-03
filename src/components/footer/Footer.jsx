@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+//Creating footer section.
 
 export function Footer() {
     const authStatus = useSelector((state) => state.auth.status)

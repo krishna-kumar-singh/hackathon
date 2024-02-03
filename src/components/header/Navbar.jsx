@@ -9,40 +9,11 @@ import LogoutBtn from './LogoutBtn';
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-
-  const [showLogin, setShowLogin] = useState(false);
-
-  const openLoginModal = () => {
-    setShowLogin(true);
-  };
-
-  const closeLoginModal = () => {
-    setShowLogin(false);
-  };
   const authStatus = useSelector((state) => state.auth.status)
-
-  // const authStatus= useSelector((state)=> state.auth.status)
-  const navigate=useNavigate()
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
+  
 
   return (
     <>

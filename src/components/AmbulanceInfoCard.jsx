@@ -1,4 +1,5 @@
 import React from 'react';
+//Creating driver info card.
 
 export const AmbulanceInfoCard = ({ name, address, contact,ambulanceNo, date , distance}) => {
   return (

@@ -115,18 +115,22 @@ function Login() {
       <div className='flex justify-around mx-10 mb-16'>
         <PointSection
           icon={<FaHome size={80} color={hovered1 ? 'white' : 'green'} />}
-          title='Tragedy form'
-          description='Enrollment for job.'
+          title='Ambulance request'
+          description='Request for an ambulance.'
           hovered={hovered1}
           handleHover={handleHover1}
           handleLeave={handleLeave1}
-          to={authStatus? "post" : "login"}
+          to={ "post"}
         />
-
-        
-
-
-        
+        <PointSection
+          icon={<FaHome size={80} color={hovered2 ? 'white' : 'green'} />}
+          title='Driver registeration'
+          description='Register your ambulance for service'
+          hovered={hovered2}
+          handleHover={handleHover2}
+          handleLeave={handleLeave2}
+          to={authStatus? "driver-form" : "login"}
+        />
       </div>
 
 
@@ -158,6 +162,7 @@ function Login() {
           </div>
         </section>
       )}
+      
 
 
 
@@ -184,7 +189,6 @@ function Login() {
           content={"Navigate through emergencies confidently with our expert guidance. Our resources and trained professionals empower you to make informed decisions during challenging situations for a secure journey to recovery."}
         />
       </div>
-
 
 
       <div className='fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center my-16'>

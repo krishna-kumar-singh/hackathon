@@ -123,18 +123,22 @@ function Signup() {
       <div className='flex justify-around mx-10 mb-16'>
         <PointSection
           icon={<FaHome size={80} color={hovered1 ? 'white' : 'green'} />}
-          title='Tragedy form'
-          description='Enrollment for job.'
+          title='Ambulance request'
+          description='Request for an ambulance.'
           hovered={hovered1}
           handleHover={handleHover1}
           handleLeave={handleLeave1}
-          to={authStatus? "post" : "login"}
+          to={ "post"}
         />
-
-        
-
-
-        
+        <PointSection
+          icon={<FaHome size={80} color={hovered2 ? 'white' : 'green'} />}
+          title='Driver registeration'
+          description='Register your ambulance for service'
+          hovered={hovered2}
+          handleHover={handleHover2}
+          handleLeave={handleLeave2}
+          to={authStatus? "driver-form" : "login"}
+        />
       </div>
 
 
@@ -166,6 +170,7 @@ function Signup() {
           </div>
         </section>
       )}
+      
 
 
 

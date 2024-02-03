@@ -46,7 +46,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
+      <nav className='navbar mx-0'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           EPIC
           <i class='fab fa-firstdraft' />
@@ -71,13 +71,22 @@ function Navbar() {
           </li>
           {authStatus && (<li className='nav-item'>
             <Link
-              to='/recuitment-applications'
+              to='/patient-request'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Recuitment-applications
+              Requests
             </Link>
           </li>)}
+          <li className='nav-item'>
+            <Link
+              to='/ambulance-availability'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Ambulance Availability
+            </Link>
+          </li>
           <li className='nav-item'>
             <Link
               to='/contact-us'
@@ -88,11 +97,7 @@ function Navbar() {
             </Link>
           </li>
 
-          {authStatus && (
-          <li className='nav-item'>
-            <LogoutBtn  className='transition-all bg-red-500 duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-red-500 hover:border-2 hover:border-solid'/>
-          </li>
-          )}
+          
 
         
          
@@ -109,12 +114,11 @@ function Navbar() {
           <Button className=' transition-all bg-green-500 duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-green-500 hover:border-2 hover:border-solid'>Login</Button>
         </Link>
         )}
-        
-        {showLogin && (
-        <div className='z-50'>
-        <Login onClose={closeLoginModal} />
-        </div>
-      )}
+        {authStatus && (
+          <li className='nav-item ml-4'>
+            <LogoutBtn  className='transition-all bg-red-500 duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-red-500 hover:border-2 hover:border-solid'/>
+          </li> 
+        )}
 
       </nav>
     </>

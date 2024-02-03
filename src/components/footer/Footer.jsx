@@ -31,6 +31,16 @@ export function Footer() {
                                         About
                                     </Link>
                                 </li>
+                                <li className="mb-4">
+                                    <Link to="/ambulance-availability" className="hover:underline">
+                                    Ambulance Availability
+                                    </Link>
+                                </li>
+                                {authStatus && <li className="mb-4">
+                                    <Link to="/patient-request" className="hover:underline">
+                                    Patient Requests
+                                    </Link>
+                                </li>}
                             </ul>
                         </div>
                         <div>
@@ -38,7 +48,7 @@ export function Footer() {
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
                                     <a
-                                        href="https://github.com/Amit-bhardwaj01/react-project-hackathon"
+                                        href="/"
                                         className="hover:underline"
                                         target="_blank"
                                         rel="noreferrer"

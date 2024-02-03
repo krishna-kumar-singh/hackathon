@@ -4,7 +4,7 @@ import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
 import { getCurrentLocation } from "../getLocation";
 
-//creating a form full ambulance driver to serve
+//creating a form for ambulance driver to provide the service and also taking his geological location to calculate distance from patient.
 
 
 export function AmbulanceDriverForm() {
@@ -14,7 +14,6 @@ export function AmbulanceDriverForm() {
   const [ambulanceNo, setAmbulanceNo] = useState();
 
   const userData = useSelector((state) => state.auth.userData);
-  const authStatus = useSelector((state) => state.auth.status);
   
   const submit = async (e) => {
     e.preventDefault();

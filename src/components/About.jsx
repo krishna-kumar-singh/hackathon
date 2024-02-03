@@ -1,7 +1,5 @@
-
-// About.jsx
 import React from 'react';
-// import TeamImage from '../assets/team.jpg'; // Import your team image or any relevant image
+//creating about page using react base component.
 
 export const About = () => {
   return (

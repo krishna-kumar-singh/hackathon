@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
-import { useSelector } from 'react-redux';
 import AmbulanceInfoCard from './AmbulanceInfoCard';
 import { calculateDistance, getCurrentLocation } from './getLocation';
+
+//Rendering all the necessary information about driver.
 
 let location;
 export function AmbulanceAvailability() {

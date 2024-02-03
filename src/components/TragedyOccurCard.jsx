@@ -1,4 +1,5 @@
 import React from 'react';
+//Creating Tragedy occured card.
 
 export const TragedyOccurCard = ({ gender,patientName,patientLatitude,patientLongitude, address,contact,tragedyOccur,age, date,}) => {
   return (

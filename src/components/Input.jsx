@@ -1,4 +1,5 @@
 import React, { useId } from 'react';
+//Creating global input box to use globally.
 
 const Input = React.forwardRef(function Input({
     label,

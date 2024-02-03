@@ -1,4 +1,5 @@
 import React from 'react'
+//creating card component.
 
 export function Card({title,content}) {
     return (

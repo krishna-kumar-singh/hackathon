@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { PiHandCoinsFill } from 'react-icons/pi';
-import { FaGifts } from "react-icons/fa";
 import Card from './Card'
-import store from '../store/store'
 import { useSelector } from 'react-redux';
+//Creating home page.
 
 export function Welcome() {
 

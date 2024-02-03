@@ -1,3 +1,4 @@
+//Creating redux slice to update initial state of web app.
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+//Creating contact us section for users to contact us.
 
 export const ContactUs = () => {
   return (

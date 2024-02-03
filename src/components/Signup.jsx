@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
-import { PiHandCoinsFill } from 'react-icons/pi';
-import { FaGifts } from "react-icons/fa";
 import Card from './Card'
 import { login } from '../store/authSlice';
 import { Button, Input } from './index.js';
 import { useDispatch, useSelector } from 'react-redux';
 import authService from '../appwrite/auth.js';
+
+//Creating sign up page.
 
 function Signup() {
 
@@ -17,7 +17,6 @@ function Signup() {
     const handleCloseBtn= ()=> navigate("/")
     const [hovered1, setHovered1] = useState(false);
     const [hovered2, setHovered2] = useState(false);
-    const [hovered3, setHovered3] = useState(false);
 
     const handleHover1 = () => {
     setHovered1(true);

@@ -1,3 +1,4 @@
+//Creating global store to access all states.
 import {configureStore} from "@reduxjs/toolkit";
 import authSlice from "./authSlice";
 

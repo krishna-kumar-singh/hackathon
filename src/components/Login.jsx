@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login as authLogin } from '../store/authSlice';
 import { FaHome } from 'react-icons/fa';
-import { PiHandCoinsFill } from 'react-icons/pi';
-import { FaGifts } from "react-icons/fa";
 import Card from './Card'
 import { Input,Button } from './index';
 import { useDispatch, useSelector } from 'react-redux';
 import authService from '../appwrite/auth';
+
+//Creating Login form
 
 function Login() {
     const navigate = useNavigate();

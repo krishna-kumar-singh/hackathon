@@ -1,4 +1,5 @@
 import React, { useId, forwardRef } from 'react';
+//Creating global select option to use Globally.
 
 export const Select = forwardRef(({ options, className, label, ...props }, ref) => {
   const id = useId();

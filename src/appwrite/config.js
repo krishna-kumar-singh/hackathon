@@ -15,8 +15,6 @@ export class Service{
  
     async createRequest(
         {
-            patientLatitude,
-            patientLongitude,
             gender,
             patientName,
             address,
@@ -27,8 +25,6 @@ export class Service{
         }){
         try {
             return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId, ID.unique(), {
-            patientLatitude,
-            patientLongitude,
             patientName,
             address,
             gender,

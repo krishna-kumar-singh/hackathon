@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Button, Input } from "../index";
 import service from "../../appwrite/config";
-import { useSelector } from "react-redux";
-import { Select } from "../Select";
-import { getCurrentLocation } from "../temp";
 
+import { Select } from "../Select";
 export function PostForm() {
   const [patientName, setPatientName] = useState(null);
   const [gender, setGender] = useState("Male");
@@ -16,10 +14,7 @@ export function PostForm() {
 const submit = async (e) => {
   e.preventDefault();
   try {
-    const location = await getCurrentLocation();
     const dbPost = await service.createRequest({
-      patientLatitude: location.latitude,
-      patientLongitude: location.longitude,
       date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
       gender,
       patientName,

@@ -14,7 +14,7 @@ export function getCurrentLocation() {
     });
 }
 
-function calculateDistance(latitude1, latitude2,longitude1, longitude2) {
+export function calculateDistance(latitude1, latitude2,longitude1, longitude2) {
     
     return Math.sqrt(((latitude1-latitude2)*(latitude1-latitude2))+((longitude1-longitude2)*(longitude1-longitude2)))
 }

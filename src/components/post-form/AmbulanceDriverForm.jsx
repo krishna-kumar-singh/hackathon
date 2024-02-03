@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
-import { getCurrentLocation } from "../temp";
+import { getCurrentLocation } from "../getLocation";
 
 //creating a form full ambulance driver to serve
 

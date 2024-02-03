@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import { useSelector } from 'react-redux';
 import AmbulanceInfoCard from './AmbulanceInfoCard';
+import { calculateDistance, getCurrentLocation } from './getLocation';
 
-
+let location;
 export function AmbulanceAvailability() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const  location = await getCurrentLocation()
         const response = await service.getDriverForms();
         setPosts(response.documents);
       } catch (error) {
@@ -31,7 +33,10 @@ export function AmbulanceAvailability() {
             contact={post.contact}
             ambulanceNo={post.ambulanceNo}
             date={post.date}
-            
+            // rendering distance between teh user and driver
+            distance={
+              calculateDistance(location.latitude,post.driverLatitude,location.longitude,post.driverLongitude)
+            }
           />
         </div>
       ))}

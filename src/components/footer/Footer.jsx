@@ -31,16 +31,6 @@ export function Footer() {
                                         About
                                     </Link>
                                 </li>
-                                <li className="mb-4">
-                                    <Link to="/recuitment" className="hover:underline">
-                                        RecuiterForm
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/reward" className="hover:underline">
-                                        Rewards
-                                    </Link>
-                                </li>
                             </ul>
                         </div>
                         <div>

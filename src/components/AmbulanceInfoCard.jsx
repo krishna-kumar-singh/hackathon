@@ -9,7 +9,7 @@ export const AmbulanceInfoCard = ({ name, address, contact,ambulanceNo, date , d
         <div className="text-lg font-semibold mb-2">Ambulance No: {ambulanceNo}</div>
         <div className="text-lg font-semibold mb-2">Contact: {contact}</div>
         <div className="text-lg font-semibold mb-2">Address: {address}</div>
-        <div className="text-lg font-semibold mb-2">Distance for your current location: {distance} km</div>
+        <div className="text-lg font-semibold mb-2">Distance from your current location: {distance} km</div>
       </div>
     </div>
   );

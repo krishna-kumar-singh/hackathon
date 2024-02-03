@@ -26,8 +26,8 @@ function Requests() {
     }
   }, [authStatus, userData.$id]);
 
-  if (!authStatus) {
-    return <div>Unable Applications</div>;
+  if (posts.length==0) {
+    return <div class="bg-red-500 text-white p-2 rounded-md">No patient registered yet.</div>
   }
   return (
     <div className='flex flex-col'>

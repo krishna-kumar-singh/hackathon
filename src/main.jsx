@@ -48,12 +48,6 @@ const router = createBrowserRouter(
           )
         },
         {
-          path:'/recruitment',
-          element:(
-            <RecuiterForm/>
-          )
-        },
-        {
           path:'/about',
           element:(
             <About/>
@@ -71,12 +65,7 @@ const router = createBrowserRouter(
             <Requests/>
           )
         },
-        {
-          path:'/recuitment-applications',
-          element:(
-            <RecuitmentApplications/>
-          )
-        }
+        
         // {
         //   path:'/all-posts',
         //   element:(

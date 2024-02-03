@@ -47,11 +47,11 @@ export function PostForm() {
         <div className="flex flex-col justify-start ml-1">
         <Input
           type="text"
-          label="Name :"
-          placeholder="Name"
+          label="Patient Name :"
+          placeholder="Patient Name"
           className="mb-4"
           required
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setPatientName(e.target.value)}
         />
           <Select
            options={["Male", "Female"]}
@@ -59,37 +59,15 @@ export function PostForm() {
            className="mb-4 border-gray-300"
            onChange={(e) => setGender(e.target.value)} 
           />
-          <Select
-           options={["8th-10th", "11th-12th", "college"]}
-           label="Qualification"
-           className="mb-4 border-gray-300"
-           onChange={(e) => setQualification(e.target.value)} 
-          />
-          <Select
-           options={["Offline", "Online"]}
-           label="Mode of job"
-           className="mb-4 border-gray-300"
-           onChange={(e) => setModeOfJob(e.target.value)} 
-          />
-          <Select
-           options={["Full-Time", "Part-Time"]}
-           label="Prefered time"
-           className="mb-4 border-gray-300"
-           onChange={(e) => setTimeOfJob(e.target.value)} 
-          />
-          <div className="flex justify-start">
-          <input
-            className='inline items-center mr-2 focus:bg-gray-50 duration-200 borderbg-white text-black outline-none border-gray-300  '
-            type="checkbox"
-            name="experience"
-            id="experience"
-            defaultValue={experience}
-            onChange={() => setExperience((prev) => !prev)}
-          />
-          <label htmlFor="experience"> Experience</label>
-          </div>
         </div>
-        <br />
+        <Input
+          type="text"
+          label="contact :"
+          placeholder="Tel us the tragedy that has occured"
+          className="mb-4"
+          required
+          onChange={(e) => setTragedyOccur(e.target.value)}
+        />
         <Input
           type="text"
           label="contact :"
@@ -106,29 +84,7 @@ export function PostForm() {
           required
           onChange={(e) => setAddress(e.target.value)}
         />
-        <Input
-          type="text"
-          label="About :"
-          placeholder="About"
-          className="mb-4"
-          required
-          onChange={(e) => setAbout(e.target.value)}
-        />
-        <Input
-          type="text"
-          label="Interested Job :"
-          placeholder="Interested Job"
-          className="mb-4"
-          required
-          onChange={(e) => setJobType(e.target.value)}
-        />
-        <Input
-          type="url"
-          label="Potofolio :"
-          placeholder="Potofolio Url"
-          className="mb-4"
-          onChange={(e) => setPotofolio(e.target.value)}
-        />
+
       </div>
       <div className="w-[1040px] px-2 pl-10">
         <Button

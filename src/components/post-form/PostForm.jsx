@@ -5,17 +5,11 @@ import { useSelector } from "react-redux";
 import { Select } from "../Select";
 
 export function PostForm() {
-  const [name, setName] = useState(null);
+  const [patientName, setPatientName] = useState(null);
   const [gender, setGender] = useState("Male");
-  const [qualification, setQualification] = useState("8th-10th");
-  const [experience, setExperience] = useState(false);
   const [contact, setContact] = useState(null);
   const [address, setAddress] = useState(null);
-  const [modeOfJob,setModeOfJob]=useState("Offline")
-  const [timeOfJob,setTimeOfJob]=useState("Full-Time");
-  const [potofolio,setPotofolio] = useState(null);
-  const [about, setAbout] = useState("");
-  const [jobType, setJobType] = useState(null);
+  const [tragedyOccur, setTragedyOccur] = useState(null);
   const userData = useSelector((state) => state.auth.userData);
   const authStatus = useSelector((state) => state.auth.status);
   
@@ -24,18 +18,13 @@ export function PostForm() {
     try {
       console.log("userData :",userData)
         const dbPost = await service.createRequest({
-          slug:name+(userData ? userData.$id : "123"),
-          name,
+          slug:(patientName+date),
           gender,
-          qualification,
-          experience,
-          contact,
+          patientName,
           address,
-          modeOfJob,
-          timeOfJob,
-          potofolio,
-          about,
-          jobType,
+          contact,
+          tragedyOccur,
+          age,
           date:new Date().toLocaleDateString(),
           userId: userData ? userData.$id : null,
         });

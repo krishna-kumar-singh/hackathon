@@ -15,7 +15,7 @@ export const About = () => {
       <div className="bg-white p-6 rounded shadow">
         <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
         <p className="text-gray-700">
-        "At [Your Ambulance Service], our mission is to be the beacon of hope and support during critical moments. We are dedicated to providing swift and compassionate emergency response services, ensuring that individuals facing accidents or medical emergencies receive the care they need promptly. Our team of highly trained professionals is committed to upholding the highest standards of service, making a positive impact on lives by prioritizing safety, health, and well-being. Every call we answer is an opportunity to make a difference, and we embrace our responsibility to be the lifeline that connects people to vital care."
+        "At EPIC, our mission is to be the beacon of hope and support during critical moments. We are dedicated to providing swift and compassionate emergency response services, ensuring that individuals facing accidents or medical emergencies receive the care they need promptly. Our team of highly trained professionals is committed to upholding the highest standards of service, making a positive impact on lives by prioritizing safety, health, and well-being. Every call we answer is an opportunity to make a difference, and we embrace our responsibility to be the lifeline that connects people to vital care."
         </p>
       </div>
       <div className="bg-white p-6 rounded shadow">

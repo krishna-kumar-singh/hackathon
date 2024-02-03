@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
+import { getCurrentLocation } from "../temp";
 
 //creating a form full ambulance driver to serve
 
@@ -18,9 +19,10 @@ export function AmbulanceDriverForm() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      console.log("userData :",userData)
+        const  location = await getCurrentLocation()
         const dbPost = await service.ambulanceDriverForm({
-          
+          driverLatitude: location.latitude,
+          driverLongitude: location.longitude,
           slug:name,
           name,
           contact,

@@ -3,6 +3,7 @@ import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
 import { Select } from "../Select";
+import { getCurrentLocation } from "../temp";
 
 export function PostForm() {
   const [patientName, setPatientName] = useState(null);
@@ -12,30 +13,32 @@ export function PostForm() {
   const [address, setAddress] = useState(null);
   const [tragedyOccur, setTragedyOccur] = useState(null);
   
-  const submit = async (e) => {
-    e.preventDefault();
-    try {
+const submit = async (e) => {
+  e.preventDefault();
+  try {
+    const location = await getCurrentLocation();
+    const dbPost = await service.createRequest({
+      patientLatitude: location.latitude,
+      patientLongitude: location.longitude,
+      date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      gender,
+      patientName,
+      address,
+      contact,
+      tragedyOccur,
+      age
+    });
 
-        const dbPost = await service.createRequest({
-          date:new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-          gender,
-          patientName,
-          address,
-          contact,
-          tragedyOccur,
-          age,
-        });
-
-        if (dbPost) {
-          console.log("successfully request get send for collection")
-          console.log("db post :",dbPost)
-          alert("successfully requested")
-          // navigate(`/post/${dbPost.$id}`);
-        }
-      }catch (error) {
-      console.error("Error submitting form:", error);
+    if (dbPost) {
+      console.log("successfully request get sent for collection");
+      console.log("db post :", dbPost);
+      alert("Successfully requested");
+      // navigate(`/post/${dbPost.$id}`);
     }
-  };
+  } catch (error) {
+    console.error("Error submitting form:", error);
+  }
+};
 
   return (
     <form onSubmit={submit} className=" flex flex-col justify-start pb-20 mt-0 ml-0 mr-0 div1 bg-cover bg-center relative" style={{backgroundImage:'url(https://img.freepik.com/free-photo/organized-desk-with-copy-space_23-2148219270.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706832000&semt=ais)'}}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TragedyOccurCard = ({ gender,patientName, address,contact,tragedyOccur,age, date,}) => {
+export const TragedyOccurCard = ({ gender,patientName,patientLatitude,patientLongitude, address,contact,tragedyOccur,age, date,}) => {
   return (
     <div className="flex items-start space-x-4 p-4 border border-gray-300">
       <div className="flex flex-col">

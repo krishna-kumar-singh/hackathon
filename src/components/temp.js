@@ -1,11 +1,17 @@
 // try to get longitude and latitude of user
-function geoLocation(){
-    return navigator.geolocation.getCurrentPosition(
-        function(position) {
-            let latitude = position.coords.latitude;
-            let longitude = position.coords.longitude;
-            return {latitude,longitude}
-    })
+export function getCurrentLocation() {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                resolve({ latitude, longitude });
+            },
+            function(error) {
+                reject(error);
+            }
+        );
+    });
 }
 
 function calculateDistance(latitude1, latitude2,longitude1, longitude2) {

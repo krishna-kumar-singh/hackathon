@@ -15,7 +15,8 @@ export class Service{
  
     async createRequest(
         {
-            slug,
+            patientLatitude,
+            patientLongitude,
             gender,
             patientName,
             address,
@@ -25,7 +26,9 @@ export class Service{
             date,
         }){
         try {
-            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId, slug, {
+            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId, ID.unique(), {
+            patientLatitude,
+            patientLongitude,
             patientName,
             address,
             gender,
@@ -41,7 +44,8 @@ export class Service{
     
     async ambulanceDriverForm(
         {
-
+            driverLatitude,
+            driverLongitude,
             name,
             ambulanceNo,
             address,
@@ -56,6 +60,8 @@ export class Service{
                 address,
                 contact,
                 date,
+                driverLatitude,
+                driverLongitude,
                 userId
             });
         } catch (error) {

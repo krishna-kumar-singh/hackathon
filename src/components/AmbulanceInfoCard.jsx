@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const AmbulanceInfoCard = ({ name, address, contact, ambulanceNo, date }) => {
+export const AmbulanceInfoCard = ({ name, address, contact,ambulanceNo, date }) => {
   return (
     <div className="flex items-start space-x-4 p-4 border border-gray-300 rounded-md shadow-md">
       <div className="flex flex-col">

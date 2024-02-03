@@ -31,6 +31,7 @@ export function AmbulanceAvailability() {
             contact={post.contact}
             ambulanceNo={post.ambulanceNo}
             date={post.date}
+            
           />
         </div>
       ))}

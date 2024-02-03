@@ -10,7 +10,7 @@ export function AmbulanceAvailability() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const  location = await getCurrentLocation()
+        location = await getCurrentLocation()
         const response = await service.getDriverForms();
         setPosts(response.documents);
       } catch (error) {

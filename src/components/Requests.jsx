@@ -13,7 +13,7 @@ function Requests() {
     const fetchData = async () => {
       try {
         if (userData){
-          const response = await service.getRequests();
+          const response = await service.getRequest();
           setPosts(response.documents);
         }
       } catch (error) {

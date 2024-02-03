@@ -71,11 +71,11 @@ function Navbar() {
           </li>
           {authStatus && (<li className='nav-item'>
             <Link
-              to='/recuitment-applications'
+              to='/requests'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Recuitment-applications
+              Requests
             </Link>
           </li>)}
           <li className='nav-item'>

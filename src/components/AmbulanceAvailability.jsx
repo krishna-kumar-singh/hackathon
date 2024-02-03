@@ -18,7 +18,8 @@ export function AmbulanceAvailability() {
     fetchData();
   }, []);
   if (posts.length==0) {
-    return <div>Unable Applications</div>;
+    return <div class="bg-red-500 text-white p-2 rounded-md">No ambulance available right now.</div>
+
   }
   return (
     <div className='flex flex-col'>

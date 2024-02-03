@@ -3,6 +3,9 @@ import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
 
+//creating a form full ambulance driver to serve
+
+
 export function AmbulanceDriverForm() {
   const [name, setName] = useState(null);
   const [contact, setContact] = useState(null);
@@ -23,7 +26,7 @@ export function AmbulanceDriverForm() {
           contact,
           address,
           ambulanceNo,
-          date:new Date().toLocaleDateString(),
+          date:new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
           userId: userData ? userData.$id : null,
         });
 
@@ -31,7 +34,6 @@ export function AmbulanceDriverForm() {
           console.log("successfully request get send for collection")
           console.log("db post :",dbPost)
           alert("successfully requested")
-          // navigate(`/post/${dbPost.$id}`);
         }
       }catch (error) {
       console.error("Error submitting form:", error);

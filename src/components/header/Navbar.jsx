@@ -47,7 +47,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar mx-0'>
-        <Link to='/' className='navbar-logo text-3xl font-serif text-yellow-400' onClick={closeMobileMenu}>
+        <Link to='/' className='navbar-logo text-3xl font-serif text-green-500' onClick={closeMobileMenu}>
           Life Assist
         </Link>
         <div className='menu-icon' onClick={handleClick}>

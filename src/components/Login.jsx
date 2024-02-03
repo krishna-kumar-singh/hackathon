@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login as authLogin } from '../store/authSlice';
-import { FaHome } from 'react-icons/fa';
 import Card from './Card'
 import { Input,Button } from './index';
 import { useDispatch, useSelector } from 'react-redux';
 import authService from '../appwrite/auth';
+import { FaAmbulance } from "react-icons/fa";
+import { FaAddressCard } from "react-icons/fa";
+
 
 //Creating Login form
 
@@ -114,7 +116,7 @@ function Login() {
       {/* Flex container for Collection Request, Points, and Reward System */}
       <div className='flex justify-around mx-10 mb-16'>
         <PointSection
-          icon={<FaHome size={80} color={hovered1 ? 'white' : 'green'} />}
+          icon={<FaAmbulance size={80} color={hovered1 ? 'white' : 'green'} />}
           title='Ambulance request'
           description='Request for an ambulance.'
           hovered={hovered1}
@@ -123,7 +125,7 @@ function Login() {
           to={ "post"}
         />
         <PointSection
-          icon={<FaHome size={80} color={hovered2 ? 'white' : 'green'} />}
+          icon={<FaAddressCard size={80} color={hovered2 ? 'white' : 'green'} />}
           title='Driver registeration'
           description='Register your ambulance for service'
           hovered={hovered2}

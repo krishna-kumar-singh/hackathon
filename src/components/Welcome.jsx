@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { FaHome } from 'react-icons/fa';
+import { FaAddressCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Card from './Card'
 import { useSelector } from 'react-redux';
+import { FaAmbulance } from "react-icons/fa";
 //Creating home page.
 
 export function Welcome() {
@@ -80,7 +81,7 @@ export function Welcome() {
       {/* Flex container for Collection Request, Points, and Reward System */}
       <div className='flex justify-around mx-10 mb-16'>
         <PointSection
-          icon={<FaHome size={80} color={hovered1 ? 'white' : 'green'} />}
+          icon={<FaAmbulance size={80} color={hovered1 ? 'white' : 'green'} />}
           title='Ambulance request'
           description='Request for an ambulance.'
           hovered={hovered1}
@@ -89,7 +90,7 @@ export function Welcome() {
           to={ "post"}
         />
         <PointSection
-          icon={<FaHome size={80} color={hovered2 ? 'white' : 'green'} />}
+          icon={<FaAddressCard size={80} color={hovered2 ? 'white' : 'green'} />}
           title='Driver registeration'
           description='Register your ambulance for service'
           hovered={hovered2}

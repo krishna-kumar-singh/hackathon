@@ -12,22 +12,7 @@ export class Service{
         this.databases=new Databases(this.client)
         this.bucket=new Storage(this.client)
     }
-
-
-    // file upload
-    // async uploadFile(file){
-    //     try {
-    //         return await this.bucket.createFile(
-    //             conf.appwriteBucketId,
-    //             ID.unique(),
-    //             file
-    //             )
-    //     } catch (error) {
-    //         console.log('app write service :: uploadFile error ', error)
-    //     }
-    // }
-
-    
+ 
     async createRequest(
         {
             slug,
@@ -38,10 +23,9 @@ export class Service{
             tragedyOccur,
             age,
             date,
-            userId
         }){
         try {
-            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionId, slug, {
+            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId, slug, {
             patientName,
             address,
             gender,
@@ -49,78 +33,63 @@ export class Service{
             tragedyOccur,
             age,
             date,
+            });
+        } catch (error) {
+            console.log('app write service :: createPost error ', error)
+        }
+    }
+    
+    async ambulanceDriverForm(
+        {
+            slug,
+            name,
+            ambulanceNo,
+            address,
+            contact,
+            date,
             userId
+        }){
+        try {
+            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionDriverId, slug, {
+                name,
+                ambulanceNo,
+                address,
+                contact,
+                date,
+                userId
             });
         } catch (error) {
             console.log('app write service :: createPost error ', error)
         }
     }
 
-    // async createRecuitmentRequest(
-    //     {
-    //         slug,
-    //         modeOfJob,
-    //         timeOfJob,
-    //         jobType,
-    //         contact,
-    //         address,
-    //         date,
-    //         salary,
-    //         about,
-    //         userId
-    //     }){
-    //     try {
-    //         return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionRecuitmentId, slug, {
-    //             modeOfJob,
-    //             timeOfJob,
-    //             jobType,
-    //             contact,
-    //             address,
-    //             date,
-    //             salary,
-    //             about,
-    //             userId
-    //         });
-    //     } catch (error) {
-    //         console.log('app write service :: createRecuitment error ', error)
-    //     }
-    // }
-    
-    
-    // async getRequest(slug){
-    //     try {
-    //         return await this.databases.getDocument(conf.appwriteDatabaseId,conf.appwriteCollectionId,slug)
-    //     } catch (error) {
-    //         console.log('app write service :: getPost error ', error)
-    //     }
-    //     return false
-    // }
     
 
 
-    async getRequests(){
+    async getUserForms(){
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
-                conf.appwriteCollectionId,
+                conf.appwriteCollectionUserId,
                 
             )
         } catch (error) {
-            console.log("Appwrite serive :: getRequests :: error", error);
+            console.log("Appwrite serive :: getUserForms :: error", error);
             return false
         }
     }
-    // async getRequestsOfRecuitment(){
-    //     try {
-    //         return await this.databases.listDocuments(
-    //             conf.appwriteDatabaseId,
-    //             conf.appwriteCollectionRecuitmentId,
-    //         )
-    //     } catch (error) {
-    //         console.log("Appwrite serive :: getRequestsofRecuitment :: error", error);
-    //         return false
-    //     }
-    // }
+    async getDriverForms(){
+        try {
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionDriverId,
+                
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: getDriverForms :: error", error);
+            return false
+        }
+    }
 }
 const service = new Service()
 export default service

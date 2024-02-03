@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 export const ContactUs = () => {
   return (
-    <div className="container mx-auto pb-10 text-center bg-cover" style={{
+    <div className="container mx-auto pb-10 pt-10 text-center bg-cover" style={{
       backgroundImage: 'url(https://img.freepik.com/premium-photo/keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg)',
     }}>
       <h1 className="text-3xl text-white font-bold mb-6">Contact Us</h1>
@@ -12,7 +12,7 @@ export const ContactUs = () => {
           <FaMapMarkerAlt className="text-blue-500 mr-4" />
           <div>
             <h3 className="text-xl font-bold text-start">Our Location</h3>
-            <p>123 Main Street, Cityville, Country</p>
+            <p>654 Lajpat Nagar, Delhi, India</p>
           </div>
         </div>
 
@@ -20,7 +20,7 @@ export const ContactUs = () => {
           <FaEnvelope className="text-blue-500 mr-4" />
           <div>
             <h3 className="text-xl font-bold text-start">Email Us</h3>
-            <p>info@example.com</p>
+            <p>life.assist@gmail.com</p>
           </div>
         </div>
 
@@ -28,7 +28,7 @@ export const ContactUs = () => {
           <FaPhone className="text-blue-500 mr-4" />
           <div>
             <h3 className="text-xl font-bold text-start">Call Us</h3>
-            <p>+1 234 567 890</p>
+            <p>+91 9560482174</p>
           </div>
         </div>
       </div>

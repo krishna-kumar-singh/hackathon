@@ -12,9 +12,8 @@ import {Signup} from './components/index.js'
 import {PostForm} from './components/post-form/PostForm.jsx'
 import {ContactUs} from './components/ContactUs.jsx'
 import Requests from './components/Requests.jsx'
-// import RecuiterForm from './components/post-form/RecuiterForm.jsx'
-// import RecuitmentApplications from './components/RecuitmentApplications.jsx'
-
+import AmbulanceDriverForm from './components/post-form/AmbulanceDriverForm.jsx'
+import AmbulanceAvailability from './components/AmbulanceAvailability.jsx'
 const router = createBrowserRouter(
   [
     {
@@ -60,9 +59,21 @@ const router = createBrowserRouter(
           )
         },
         {
-          path:'/requests',
+          path:'/patient-request',
           element:(
             <Requests/>
+          )
+        },
+        {
+          path:'/driver-form',
+          element:(
+            <AmbulanceDriverForm/>
+          )
+        },
+        {
+          path:'/ambulance-availability',
+          element:(
+            <AmbulanceAvailability/>
           )
         },
         // {

@@ -141,7 +141,7 @@ export function Welcome() {
       <div className='justify-between flex mx-16 mt-16 mb-10'>       
         <Card 
           title={'Swift Emergency Response'}
-          content={'Experience rapid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
+          content={'Experience raid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
         />
         <Card 
           title={'Dedicated Ambulance Crew'}

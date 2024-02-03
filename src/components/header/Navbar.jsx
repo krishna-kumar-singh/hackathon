@@ -47,9 +47,8 @@ function Navbar() {
   return (
     <>
       <nav className='navbar mx-0'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          EPIC
-          <i class='fab fa-firstdraft' />
+        <Link to='/' className='navbar-logo text-3xl font-serif text-yellow-400' onClick={closeMobileMenu}>
+          Life Assist
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

@@ -62,8 +62,8 @@ export function PostForm() {
         </div>
         <Input
           type="text"
-          label="contact :"
-          placeholder="Tel us the tragedy that has occured"
+          label="Tell us the tragedy: :"
+          placeholder="the tragedy that has occured"
           className="mb-4"
           required
           onChange={(e) => setTragedyOccur(e.target.value)}

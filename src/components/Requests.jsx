@@ -33,13 +33,14 @@ function Requests() {
       {posts.map((post) => (
         <div key={post.$id} className='p-2 w-full'>
           <ProductCart
-            name={post.name}
+            patientName={post.patientName}
             date={post.date}
             qualification={post.qualification}
             contact={post.contact}
+            age={post.age}
             gender={post.gender}
-            about={post.about}
-            experience={post.experience}
+            address={post.address}
+            tragedyOccur={post.tragedyOccur}
           />
         </div>
       ))}

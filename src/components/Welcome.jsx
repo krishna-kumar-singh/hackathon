@@ -58,7 +58,7 @@ export function Welcome() {
       </div>):(<div
         className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] relative'
         style={{
-          backgroundImage: 'url(https://www.shutterstock.com/shutterstock/videos/1100278971/thumb/1.jpg?ip=x480)',
+          backgroundImage: 'url(https://www.shutterstock.com/shutterstock/videos/1106793649/thumb/1.jpg?ip=x480)',
         }}
       >
         <h1 className='absolute text-white text-3xl font-bold mt-48 ml-16'>

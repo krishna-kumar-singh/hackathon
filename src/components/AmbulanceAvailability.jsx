@@ -36,7 +36,7 @@ export function AmbulanceAvailability() {
             date={post.date}
             // rendering distance between teh user and driver
             distance={
-              calculateDistance(location.latitude,post.driverLatitude,location.longitude,post.driverLongitude)
+              calculateDistance(location.latitude,location.longitude,post.driverLatitude,post.driverLongitude)
             }
           />
         </div>

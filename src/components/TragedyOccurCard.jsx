@@ -19,12 +19,15 @@ export const TragedyOccurCard = ({ unique, gender, patientName, status, address,
                 <div className="text-lg font-semibold mb-2">"Age" : {age}</div>
                 <div className="text-lg font-semibold mb-2">"contact" :  {contact}</div>
                 <div className="text-lg font-semibold mb-2">"address" :  {address}</div>
+                <div className='flex justify-start align-middle space-x-1'>
+                    <label className="text-lg font-semibold mb-2">Treated: </label>
                 <input
                     type="checkbox"
                     className="cursor-pointer"
                     checked={isChecked}
                     onChange={toggleCompleted}
                 />
+                </div>
             </div>
         </div>
     );

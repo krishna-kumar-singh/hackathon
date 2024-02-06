@@ -9,12 +9,14 @@ export function Map() {
     const [location, setLocation] = useState(null);
     const latitude2 = useSelector((state) => state.auth.driverLatitude);
     const longitude2 = useSelector((state) => state.auth.driverLongitude);
-
+    console.log()
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const loc = await getCurrentLocation();
+                console.log("console loc :",loc)
                 setLocation(loc);
+
             } catch (error) {
                 console.log("error in catch:", error);
             }
@@ -35,7 +37,7 @@ export function Map() {
 
             // Create markers
             const user = L.marker([latitude, longitude]).addTo(mapRef.current);
-            const ambulance = L.marker([latitude2, longitude2]).addTo(mapRef.current);
+            const ambulance = L.marker([latitude2,longitude2]).addTo(mapRef.current);
 
             // Bind popups
             user.bindPopup('Your location').openPopup();

@@ -36,7 +36,7 @@ export const AmbulanceInfoCard = ({ name, address, contact, ambulanceNo, date, d
                 <div className="text-lg font-semibold mb-2">Distance from your current location: {distance} km</div>
                 </div>
                 <div className="text-lg font-semibold mb-2">
-                    <button className='border border-blue-500 text-blue-500 px-4 py-2 rounded hover:bg-blue-500 hover:text-white' onClick={()=>handleMap(latitude,longitude)}>
+                    <button className='border border-blue-500 text-blue-500 px-4 py-2 rounded hover:bg-blue-500 hover:text-white' onClick={()=>handleMap(longitude,latitude)}>
                         View on Map
                     </button>
                 </div>

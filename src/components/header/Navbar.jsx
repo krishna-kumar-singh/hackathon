@@ -75,7 +75,7 @@ function Navbar() {
 
         {!authStatus && (
         <Link to={'/signup'}>
-          <Button className=' transition-all bg-yellow-500 text-black duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-yellow-500 hover:border-2 hover:border-solid'>Sign up</Button>
+          <Button className=' transition-all bg-yellow-500 text-black duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-yellow-500 hover:border-2 hover:border-solid mx-4'>Sign up</Button>
         </Link>
           )}
 
@@ -85,9 +85,9 @@ function Navbar() {
         </Link>
         )}
         {authStatus && (
-          <li className='nav-item ml-4'>
+          <Link className='nav-item ml-4'>
             <LogoutBtn  className='transition-all bg-red-500 duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-red-500 hover:border-2 hover:border-solid'/>
-          </li> 
+          </Link> 
         )}
 
       </nav>

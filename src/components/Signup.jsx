@@ -81,44 +81,40 @@ function Signup() {
     };
     return (
       <div className='w-full'>
-      {authStatus? (<div
-        className='mt-0 ml-0 mr-0 div1 bg-cover bg-center h-[500px] sm:h-[400px] md:h-[300px] lg:h-[500px] xl:h-[600px] relative'
-        style={{
-          backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
-        }}
-      >
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-12 ml-4 sm:mt-24 sm:ml-16 md:mt-32 md:ml-16 lg:mt-24 lg:ml-16 xl:mt-24 xl:ml-16'>
-          Navigate Emergencies, Save Lives:
-        </h1>
-        
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-16 sm:mt-48 lg:mt-48 xl:mt-48'>
-          Your Trusted Ambulance Dashboard for Swift and Reliable Response!
-        </h1>
-      </div>):(<div
-        className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] sm:h-[400px] md:h-[300px] lg:h-[500px] xl:h-[600px] relative'
-        style={{
-          backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
-        }}
-      >
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-12 ml-4 sm:mt-24 sm:ml-16 md:mt-32 md:ml-16 lg:mt-24 lg:ml-16 xl:mt-24 xl:ml-16'>
-          Navigate Emergencies, Save Lives:
-        </h1>
-        
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-16 sm:mt-48 lg:mt-48 xl:mt-48'>
-          Your Trusted Ambulance Dashboard for Swift and Reliable Response!
-        </h1>
-      </div>
+      {authStatus ? (
+        <div className='mt-0 ml-0 mr-0 div1 bg-cover bg-center h-[500px] relative' style={{
+            backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
+          }}>
+          <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-4 sm:ml-16'>
+            Navigate Emergencies, Save Lives:
+          </h1>
+          <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-4 sm:ml-16'>
+            Your Trusted Ambulance Dashboard for Swift and Reliable Response!
+          </h1>
+        </div>
+      ) : (
+        <div className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] relative' style={{
+            backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
+          }}>
+          <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-4 sm:ml-16 '>
+            Navigate Emergencies, Save Lives:
+          </h1>
+          <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-4 sm:ml-16'>
+            Your Trusted Ambulance Dashboard for Swift and Reliable Response!
+          </h1>
+        </div>
       )}
 
-           
-      {authStatus && (<section className="py-12 mb-16  bg-blue-400">
-      <div className="container mx-auto text-center text-white">
-        <h1 className="text-4xl font-bold mb-4 font-serif">Explore Your Dashboard</h1>
-        <p className="text-lg">Discover personalized features and content tailored just for you.</p>
-      </div>
-    </section>)}
-      {/* Flex container for Collection Request, Points, and Reward System */}
-      <div className='flex justify-around mx-10 mb-16'>
+      {authStatus && (
+        <section className='py-12 mb-16 bg-blue-400'>
+          <div className='container mx-auto text-center text-white'>
+            <h1 className='text-4xl font-bold mb-4 font-serif'>Explore Your Dashboard</h1>
+            <p className='text-lg'>Discover personalized features and content tailored just for you.</p>
+          </div>
+        </section>
+      )}
+
+      <div className='flex flex-col items-center sm:flex-row justify-around mx-4 sm:mx-10 mb-6'>
         <PointSection
           icon={<FaAmbulance size={80} color={hovered1 ? 'white' : 'green'} />}
           title='Ambulance request'
@@ -126,124 +122,113 @@ function Signup() {
           hovered={hovered1}
           handleHover={handleHover1}
           handleLeave={handleLeave1}
-          to={ "post"}
+          to='post'
         />
         <PointSection
           icon={<FaAddressCard size={80} color={hovered2 ? 'white' : 'green'} />}
-          title='Driver registeration'
+          title='Driver registration'
           description='Register your ambulance for service'
           hovered={hovered2}
           handleHover={handleHover2}
           handleLeave={handleLeave2}
-          to={authStatus? "driver-form" : "login"}
+          to={authStatus ? 'driver-form' : 'login'}
         />
       </div>
 
-
-      <div className='bg-amber-400 px-10 pb-28 pt-16 md:px-20 sm:px-4'>
+      <div className='bg-amber-400 px-4 sm:px-10 pb-20 pt-8'>
         <h1 className='text-center font-bold text-4xl mb-6 font-serif'>Our Service</h1>
-        <h1 className='text-2xl text-center'>At Life-Assist, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives</h1>
+        <p className='text-lg text-center'>
+          At Life-Assist, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives.
+        </p>
       </div>
 
-
-      {/* guide */}
-
       {!authStatus && (
-        <section className="text-black mx-28 sm:mx-10 my-16">
-          <div className="container  text-center">
-            {/* Catchy headline */}
-            <h1 className="text-4xl font-bold mb-4 font-serif">Rapid Emergency Response</h1>
-
-            {/* Brief introduction */}
-            <p className="text-lg">In critical moments, every second counts. Experience swift and reliable emergency response with our ambulance service. We are here to provide immediate assistance and save lives during accidents.</p>
-
-            {/* Call-to-Action button */}
-            {!authStatus && (
-              <Link to="/signup">
-                <button className="bg-yellow-500 font-bold font-serif text-2xl text-center mx-auto text-gray-800 px-6 py-2 mt-4 rounded-full">
-                  Request Ambulance
-                </button>
-              </Link>
-            )}
+        <section className='text-black mx-4 sm:mx-28 my-6'>
+          <div className='container text-center'>
+            <h1 className='text-4xl font-bold mb-4 font-serif'>Rapid Emergency Response</h1>
+            <p className='text-lg'>
+              In critical moments, every second counts. Experience swift and reliable emergency response with our ambulance service. We are here to provide immediate assistance and save lives during accidents.
+            </p>
+            <Link to='/signup'>
+              <button className='bg-yellow-500 font-bold font-serif text-2xl text-gray-800 px-6 py-2 mt-4 rounded-full'>
+                Request Ambulance
+              </button>
+            </Link>
           </div>
         </section>
       )}
-      
+      <hr />
 
-
-
-    <hr />
-
-{/*  */}
-
-      <div className='justify-between flex flex-wrap mx-16 mt-16 mb-10'>       
-        <Card 
+      <div className='flex flex-wrap justify-around mx-4 sm:mx-16 mt-6 mb-4'>
+        <Card
           title={'Swift Emergency Response'}
-          content={'Experience raid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
-          className={"mb-4"}
+          content={'Experience rapid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
+          className={"mx-2 mb-2"}
         />
-        <Card 
+        <Card
           title={'Dedicated Ambulance Crew'}
-          content={"Our skilled and compassionate ambulance crews are committed to your well-being. With a focus on professionalism and care, we ensure that you receive the support you need during emergencies."}
-          className={"mb-4"}
+          content={'Our skilled and compassionate ambulance crews are committed to your well-being. With a focus on professionalism and care, we ensure that you receive the support you need during emergencies.'}
+          className={"mx-2 mb-2"}
         />
-        
-        <Card 
+        <Card
           title={'Emergency Care Beyond Boundaries'}
-          content={"We go beyond traditional ambulance services, offering comprehensive emergency care. Your health and safety are paramount, and our services are designed to provide holistic support during accidents."}
-          className={"mb-4"}
+          content={'We go beyond traditional ambulance services, offering comprehensive emergency care. Your health and safety are paramount, and our services are designed to provide holistic support during accidents.'}
+          className={"mx-2 mb-2"}
         />
-        <Card 
+        <Card
           title={'Expert Guidance in Crisis'}
-          content={"Navigate through emergencies confidently with our expert guidance. Our resources and trained professionals empower you to make informed decisions during challenging situations for a secure journey to recovery."}
-          className={"mb-4"}
+          content={'Navigate through emergencies confidently with our expert guidance. Our resources and trained professionals empower you to make informed decisions during challenging situations for a secure journey to recovery.'} 
+          className={"mx-2 mb-2"}
         />
       </div>
 
 
-        <div className='fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center my-16'>
-        <button onClick={handleCloseBtn} className='absolute px-2 top-2 right-2 bg-white border-1 border-solid border-black cursor-pointer transition duration-300 ease-in-out hover:bg-red-500 hover:text-white'>X</button>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-          <h2 className='text-center text-2xl font-bold leading-tight'>Sign up to create an account</h2>
-          <p className='mt-2 text-center text-base text-black/60'>
-            Already have an account?&nbsp;
-            <Link to='/login' className='font-medium text-primary transition-all duration-200 hover:underline'>
-              Sign In
-            </Link>
-          </p>
-          {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
+      <div className='fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center my-16'>
+  <button onClick={handleCloseBtn} className='absolute px-2 top-2 right-2 bg-white border-1 border-solid border-black cursor-pointer transition duration-300 ease-in-out hover:bg-red-500 hover:text-white'>
+    X
+  </button>
+  <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-6 md:p-10 border border-black/10`}>
+    <h2 className='text-center text-2xl font-bold leading-tight'>Sign up to create an account</h2>
+    <p className='mt-2 text-center text-base text-black/60'>
+      Already have an account?&nbsp;
+      <Link to='/login' className='font-medium text-primary transition-all duration-200 hover:underline'>
+        Sign In
+      </Link>
+    </p>
+    {error && <p className='text-red-600 mt-4 text-center'>{error}</p>}
 
-          <form onSubmit={create}>
-            <div className='space-y-5'>
-              <Input label='Full Name: ' placeholder='Enter your full name' onChange={(e) => setName(e.target.value)} required />
-              <Input label='Email: ' placeholder='Enter your email' type='email' required onChange={(e) => setEmail(e.target.value)} />
-              <Input
-                label='Password: '
-                type={passText ? 'text' : 'password'}
-                placeholder='Enter your password'
-                required
-                onChange={(e) => setPassword(e.target.value)}
-                eye={
-                  <div className='w-[25px]' onClick={handlePass}>
-                    <img
-                      className='cursor-pointer'
-                      src={passText ? 'https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png' : 'https://static.thenounproject.com/png/777494-200.png'}
-                      alt=''
-                    />
-                  </div>
-                }
+    <form onSubmit={create} className='mt-4'>
+      <div className='space-y-5'>
+        <Input label='Full Name:' placeholder='Enter your full name' onChange={(e) => setName(e.target.value)} required />
+        <Input label='Email:' placeholder='Enter your email' type='email' required onChange={(e) => setEmail(e.target.value)} />
+        <Input
+          label='Password:'
+          type={passText ? 'text' : 'password'}
+          placeholder='Enter your password'
+          required
+          onChange={(e) => setPassword(e.target.value)}
+          eye={
+            <div className='w-[25px]' onClick={handlePass}>
+              <img
+                className='cursor-pointer'
+                src={passText ? 'https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png' : 'https://static.thenounproject.com/png/777494-200.png'}
+                alt=''
               />
-
-              <Button
-                type='submit'
-                className='w-100 bg-blue-500 hover:bg-blue-600 hover:text-white hover:border-primary hover:rounded-md '
-              >
-                Create Account
-              </Button>
             </div>
-          </form>
-        </div>
+          }
+        />
+
+        <Button
+          type='submit'
+          className='w-full bg-blue-500 text-white hover:bg-blue-600 hover:border-primary hover:rounded-md '
+        >
+          Create Account
+        </Button>
       </div>
+    </form>
+  </div>
+</div>
+
     
     
         </div>

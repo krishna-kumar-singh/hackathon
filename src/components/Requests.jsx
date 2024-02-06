@@ -44,6 +44,8 @@ function Requests() {
             gender={post.gender}
             address={post.address}
             tragedyOccur={post.tragedyOccur}
+            status={post.status}
+            unique={post.unique}
           />
         </div>
       ))}

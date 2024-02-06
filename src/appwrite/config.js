@@ -1,5 +1,6 @@
 import conf from '../conf/conf.js';
 import { Client, ID , Databases,Storage} from "appwrite";
+import { v4 as uuidv4 } from 'uuid';
 
 export class Service{
     client = new Client()
@@ -24,7 +25,8 @@ export class Service{
             date,
         }){
         try {
-            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId, ID.unique(), {
+            const unique=uuidv4()
+            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionUserId,unique, {
             patientName,
             address,
             gender,
@@ -32,12 +34,30 @@ export class Service{
             tragedyOccur,
             age,
             date,
+            unique:unique,
+            status:false,
             });
         } catch (error) {
             console.log('app write service :: createPost error ', error)
         }
     }
-    
+    async updateUserForm(unique, {status}){
+        try {
+            return await this.databases.updateDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionUserId,
+                unique,
+                {
+                status
+                }
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: updatePost :: error", error);
+        }
+    }
+
+
+
     async ambulanceDriverForm(
         {
             driverLatitude,

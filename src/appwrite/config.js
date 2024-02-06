@@ -1,5 +1,5 @@
 import conf from '../conf/conf.js';
-import { Client, ID , Databases,Storage} from "appwrite";
+import { Client, ID , Databases} from "appwrite";
 import { v4 as uuidv4 } from 'uuid';
 
 export class Service{
@@ -11,7 +11,6 @@ export class Service{
         .setEndpoint(conf.appwriteUrl) // Your API Endpoint
         .setProject(conf.appwriteProjectId);    // Your project ID
         this.databases=new Databases(this.client)
-        this.bucket=new Storage(this.client)
     }
  
     async createRequest(
@@ -41,6 +40,8 @@ export class Service{
             console.log('app write service :: createPost error ', error)
         }
     }
+
+
     async updateUserForm(unique, {status}){
         try {
             return await this.databases.updateDocument(
@@ -58,19 +59,18 @@ export class Service{
 
 
 
-    async ambulanceDriverForm(
-        {
-            driverLatitude,
-            driverLongitude,
-            name,
-            ambulanceNo,
-            address,
-            contact,
-            date,
-            userId
-        }){
+    async ambulanceDriverForm({
+        driverLatitude,
+        driverLongitude,
+        name,
+        ambulanceNo,
+        address,
+        contact,
+        date,
+        userId
+    }) {
         try {
-            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionDriverId, ID.unique(), {
+            return await this.databases.createDocument(conf.appwriteDatabaseId, conf.appwriteCollectionDriverId, userId, {
                 name,
                 ambulanceNo,
                 address,
@@ -81,12 +81,31 @@ export class Service{
                 userId
             });
         } catch (error) {
-            console.log('app write service :: createPost error ', error)
+            if (error.message && error.message.includes('Document with the requested ID already exists')) {
+                // Display an alert message indicating that a user with that ID already exists
+                alert('A user with this ID already exists.');
+            } else {
+                // For other errors, log the error for debugging purposes
+                console.log('app write service :: createPost error ', error);
+            }
         }
     }
 
+    async deleteDriverForm(slug){
+        try {
+            await this.databases.deleteDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionDriverId,
+                slug
+            
+            )
+            return true
+        } catch (error) {
+            console.log("Appwrite serive :: deletePost :: error", error);
+            return false
+        }
+    }
     
-
 
     async getUserForms(){
         try {

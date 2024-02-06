@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import AmbulanceInfoCard from './AmbulanceInfoCard';
 import { calculateDistance, getCurrentLocation } from './getLocation';
+import { useParams } from 'react-router-dom';
 
 //Rendering all the necessary information about driver.
 
 let location;
 export function AmbulanceAvailability() {
+  const param=useParams()
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +21,7 @@ export function AmbulanceAvailability() {
       }
     };
     fetchData();
-  }, []);
+  }, [param]);
   if (posts.length==0) {
     return <div class="bg-red-500 text-white p-2 rounded-md">No ambulance available right now.</div>
 

@@ -183,49 +183,52 @@ function Signup() {
       </div>
 
 
-        <div className='fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center my-16'>
-        <button onClick={handleCloseBtn} className='absolute px-2 top-2 right-2 bg-white border-1 border-solid border-black cursor-pointer transition duration-300 ease-in-out hover:bg-red-500 hover:text-white'>X</button>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-          <h2 className='text-center text-2xl font-bold leading-tight'>Sign up to create an account</h2>
-          <p className='mt-2 text-center text-base text-black/60'>
-            Already have an account?&nbsp;
-            <Link to='/login' className='font-medium text-primary transition-all duration-200 hover:underline'>
-              Sign In
-            </Link>
-          </p>
-          {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
+      <div className='fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center my-16'>
+  <button onClick={handleCloseBtn} className='absolute px-2 top-2 right-2 bg-white border-1 border-solid border-black cursor-pointer transition duration-300 ease-in-out hover:bg-red-500 hover:text-white'>
+    X
+  </button>
+  <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-6 md:p-10 border border-black/10`}>
+    <h2 className='text-center text-2xl font-bold leading-tight'>Sign up to create an account</h2>
+    <p className='mt-2 text-center text-base text-black/60'>
+      Already have an account?&nbsp;
+      <Link to='/login' className='font-medium text-primary transition-all duration-200 hover:underline'>
+        Sign In
+      </Link>
+    </p>
+    {error && <p className='text-red-600 mt-4 text-center'>{error}</p>}
 
-          <form onSubmit={create}>
-            <div className='space-y-5'>
-              <Input label='Full Name: ' placeholder='Enter your full name' onChange={(e) => setName(e.target.value)} required />
-              <Input label='Email: ' placeholder='Enter your email' type='email' required onChange={(e) => setEmail(e.target.value)} />
-              <Input
-                label='Password: '
-                type={passText ? 'text' : 'password'}
-                placeholder='Enter your password'
-                required
-                onChange={(e) => setPassword(e.target.value)}
-                eye={
-                  <div className='w-[25px]' onClick={handlePass}>
-                    <img
-                      className='cursor-pointer'
-                      src={passText ? 'https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png' : 'https://static.thenounproject.com/png/777494-200.png'}
-                      alt=''
-                    />
-                  </div>
-                }
+    <form onSubmit={create} className='mt-4'>
+      <div className='space-y-5'>
+        <Input label='Full Name:' placeholder='Enter your full name' onChange={(e) => setName(e.target.value)} required />
+        <Input label='Email:' placeholder='Enter your email' type='email' required onChange={(e) => setEmail(e.target.value)} />
+        <Input
+          label='Password:'
+          type={passText ? 'text' : 'password'}
+          placeholder='Enter your password'
+          required
+          onChange={(e) => setPassword(e.target.value)}
+          eye={
+            <div className='w-[25px]' onClick={handlePass}>
+              <img
+                className='cursor-pointer'
+                src={passText ? 'https://static-00.iconduck.com/assets.00/eye-password-hide-icon-512x512-iv45hct9.png' : 'https://static.thenounproject.com/png/777494-200.png'}
+                alt=''
               />
-
-              <Button
-                type='submit'
-                className='w-100 bg-blue-500 hover:bg-blue-600 hover:text-white hover:border-primary hover:rounded-md '
-              >
-                Create Account
-              </Button>
             </div>
-          </form>
-        </div>
+          }
+        />
+
+        <Button
+          type='submit'
+          className='w-full bg-blue-500 text-white hover:bg-blue-600 hover:border-primary hover:rounded-md '
+        >
+          Create Account
+        </Button>
       </div>
+    </form>
+  </div>
+</div>
+
     
     
         </div>

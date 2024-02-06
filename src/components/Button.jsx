@@ -1,12 +1,18 @@
-import React from 'react';
-import './Button.css';
-//Creating button to use globally.
+// Assuming the Button component is defined like this
+// Adjust the actual Button component if it's different
 
-export function Button({children,className=''}) {
+// Button.js
+import React from "react";
+
+export const Button = ({ type, bgColor, className, children }) => {
   return (
-    <div className='mr-12'>
-      <button className={`btn ${className}`}>{children}</button>
-    </div>
+    <button
+      type={type}
+      className={`py-2 px-4 rounded-md text-white ${bgColor} ${className}`}
+    >
+      {children}
+    </button>
   );
-}
-export default Button
+};
+
+export default Button;

@@ -44,7 +44,7 @@ export function AmbulanceDriverForm() {
   return (
     <form onSubmit={submit} className=" flex flex-col justify-start pb-20 mt-0 ml-0 mr-0 div1 bg-cover bg-center relative" style={{backgroundImage:'url(https://img.freepik.com/free-photo/organized-desk-with-copy-space_23-2148219270.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706832000&semt=ais)'}}>
       <div className="w-[1000px] px-2 my-10 pl-10 ">
-      <h1 className="text-center mb-4 text-4xl font-bold font-serif">Request For an ambulance</h1>
+      <h1 className="text-center mb-4 text-4xl font-bold font-serif">Register Your Ambulance for the Service</h1>
         <div className="flex flex-col justify-start ml-1">
         <Input
           type="text"

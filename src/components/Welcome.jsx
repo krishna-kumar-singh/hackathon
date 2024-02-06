@@ -40,36 +40,37 @@ export function Welcome() {
   };
 
   return (
+    
+      
     <div className='w-full'>
       {authStatus? (<div
-        className='mt-0 ml-0 mr-0 div1 bg-cover bg-center h-[500px] relative'
+        className='mt-0 ml-0 mr-0 div1 bg-cover bg-center h-[500px] sm:h-[400px] md:h-[300px] lg:h-[500px] xl:h-[600px] relative'
         style={{
           backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
         }}
       >
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-48 ml-16'>
-        Navigate Emergencies, Save Lives:   
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-12 ml-4 sm:mt-24 sm:ml-16 md:mt-32 md:ml-16 lg:mt-24 lg:ml-16 xl:mt-24 xl:ml-16'>
+          Navigate Emergencies, Save Lives:
         </h1>
         
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-16'>
-        Your Trusted Ambulance Dashboard for Swift and Reliable Response!
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-16 sm:mt-48 lg:mt-48 xl:mt-48'>
+          Your Trusted Ambulance Dashboard for Swift and Reliable Response!
         </h1>
-        
       </div>):(<div
-        className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] relative'
+        className='mt-0 ml-0 mr-0 mb-16 div1 bg-cover bg-center h-[500px] sm:h-[400px] md:h-[300px] lg:h-[500px] xl:h-[600px] relative'
         style={{
           backgroundImage: 'url(https://blenderartists.org/uploads/default/original/4X/b/c/7/bc75fe8c04e3311a0daa99c992a106e5765abe80.jpeg)',
         }}
       >
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-48 ml-16'>
-        Navigate Emergencies, Save Lives:   
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-12 ml-4 sm:mt-24 sm:ml-16 md:mt-32 md:ml-16 lg:mt-24 lg:ml-16 xl:mt-24 xl:ml-16'>
+          Navigate Emergencies, Save Lives:
         </h1>
         
-        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-60 ml-16'>
-        Your Trusted Ambulance Dashboard for Swift and Reliable Response!
+        <h1 className='absolute text-black bg-white px-2 text-3xl font-bold mt-32 ml-16 sm:mt-48 lg:mt-48 xl:mt-48'>
+          Your Trusted Ambulance Dashboard for Swift and Reliable Response!
         </h1>
-        
-      </div>)}
+      </div>
+      )}
 
            
       {authStatus && (<section className="py-12 mb-16  bg-blue-400">
@@ -101,7 +102,7 @@ export function Welcome() {
       </div>
 
 
-      <div className='bg-amber-400 px-64 pb-28 pt-16'>
+      <div className='bg-amber-400 px-10 pb-28 pt-16 md:px-20 sm:px-4'>
         <h1 className='text-center font-bold text-4xl mb-6 font-serif'>Our Service</h1>
         <h1 className='text-2xl text-center'>At Life-Assist, we are dedicated to providing swift and reliable emergency response services. Our mission is to ensure the safety and well-being of individuals during critical moments. With a team of highly trained professionals and state-of-the-art ambulances, we go beyond traditional services, offering comprehensive emergency care. From rapid response times to compassionate and skilled crews, we prioritize your health and safety. Our commitment extends beyond transporting patients to hospitals; we strive to be a reassuring presence during crises. At EPIC, we are more than just responders; we are partners in your journey to recovery. Trust us to navigate emergencies with precision and care, because every second counts when it comes to saving lives</h1>
       </div>
@@ -110,7 +111,7 @@ export function Welcome() {
       {/* guide */}
 
       {!authStatus && (
-        <section className="text-black mx-28 my-16">
+        <section className="text-black mx-28 sm:mx-10 my-16">
           <div className="container  text-center">
             {/* Catchy headline */}
             <h1 className="text-4xl font-bold mb-4 font-serif">Rapid Emergency Response</h1>
@@ -121,7 +122,7 @@ export function Welcome() {
             {/* Call-to-Action button */}
             {!authStatus && (
               <Link to="/signup">
-                <button className="bg-yellow-500 font-bold font-serif text-2xl text-gray-800 px-6 py-2 mt-4 rounded-full">
+                <button className="bg-yellow-500 font-bold font-serif text-2xl text-center mx-auto text-gray-800 px-6 py-2 mt-4 rounded-full">
                   Request Ambulance
                 </button>
               </Link>
@@ -137,23 +138,27 @@ export function Welcome() {
 
 {/*  */}
 
-      <div className='justify-between flex mx-16 mt-16 mb-10'>       
+      <div className='justify-between flex flex-wrap mx-16 mt-16 mb-10'>       
         <Card 
           title={'Swift Emergency Response'}
           content={'Experience raid and efficient emergency response with our ambulance services. We specialize in providing immediate assistance during critical situations, ensuring your safety is our top priority.'}
+          className={"mb-4"}
         />
         <Card 
           title={'Dedicated Ambulance Crew'}
           content={"Our skilled and compassionate ambulance crews are committed to your well-being. With a focus on professionalism and care, we ensure that you receive the support you need during emergencies."}
+          className={"mb-4"}
         />
         
         <Card 
           title={'Emergency Care Beyond Boundaries'}
           content={"We go beyond traditional ambulance services, offering comprehensive emergency care. Your health and safety are paramount, and our services are designed to provide holistic support during accidents."}
+          className={"mb-4"}
         />
         <Card 
           title={'Expert Guidance in Crisis'}
           content={"Navigate through emergencies confidently with our expert guidance. Our resources and trained professionals empower you to make informed decisions during challenging situations for a secure journey to recovery."}
+          className={"mb-4"}
         />
       </div>
 

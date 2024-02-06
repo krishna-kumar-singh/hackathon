@@ -1,30 +1,32 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import L from 'leaflet'; // Import Leaflet library
 import { getCurrentLocation } from '../getLocation';
+import { useSelector } from 'react-redux';
 
 export function Map() {
     const mapRef = useRef(null);
-    let location;
+    const [location, setLocation] = useState(null);
+    const latitude2 = useSelector((state) => state.auth.driverLatitude);
+    const longitude2 = useSelector((state) => state.auth.driverLongitude);
+
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            location = await getCurrentLocation()
-          } catch (error) {
-            console.log("error in catch:", error);
-          }
+            try {
+                const loc = await getCurrentLocation();
+                setLocation(loc);
+            } catch (error) {
+                console.log("error in catch:", error);
+            }
         };
-        fetchData();
-      }, [param]);
-    let latitude = location.location.latitude
-    let longitude =location.longitude
 
-    let latitude2 = 28.5376;
-    let longitude2 = 77.2283;
+        fetchData();
+    }, []); // Empty dependency array to run once on mount
 
     useEffect(() => {
-        if (!mapRef.current) {
-            mapRef.current = L.map('map').setView([latitude, longitude], 13); // Set initial coordinates and zoom level
+        if (location && !mapRef.current) {
+            const { latitude, longitude } = location;
+            mapRef.current = L.map('map').setView([latitude, longitude], 19); // Set initial coordinates and zoom level
 
             // Add a tile layer (OpenStreetMap)
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -32,14 +34,14 @@ export function Map() {
             }).addTo(mapRef.current);
 
             // Create markers
-            var user = L.marker([latitude, longitude]).addTo(mapRef.current);
-            var ambulance = L.marker([latitude2, longitude2]).addTo(mapRef.current);
+            const user = L.marker([latitude, longitude]).addTo(mapRef.current);
+            const ambulance = L.marker([latitude2, longitude2]).addTo(mapRef.current);
 
             // Bind popups
             user.bindPopup('Your location').openPopup();
             ambulance.bindPopup('Ambulance').openPopup();
         }
-    }, []); // Empty dependency array to run effect only once
+    }, [location, latitude2, longitude2]); // Run when location or latitude2 or longitude2 changes
 
     return (
         <div id="map" style={{ height: '400px' }}>Map</div>

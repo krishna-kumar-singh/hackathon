@@ -105,6 +105,7 @@ export function Welcome() {
           </div>
         </section>
       )}
+      <hr />
 
       <div className='flex flex-wrap justify-around mx-4 sm:mx-16 mt-6 mb-4'>
         <Card

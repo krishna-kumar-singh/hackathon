@@ -29,6 +29,8 @@ export const AmbulanceInfoCard = ({ name, address, contact, ambulanceNo, date, d
                         ❌
                     </button>
                 )}
+                
+
             </div>
         </div>
     );

@@ -14,6 +14,7 @@ import {ContactUs} from './components/ContactUs.jsx'
 import Requests from './components/Requests.jsx'
 import AmbulanceDriverForm from './components/post-form/AmbulanceDriverForm.jsx'
 import AmbulanceAvailability from './components/AmbulanceAvailability.jsx'
+import Map from './components/map/Map.jsx'
 // creating route to change the layout structure of web app.
 //Defining elements and their paths.
 const router = createBrowserRouter(
@@ -76,6 +77,12 @@ const router = createBrowserRouter(
           path:'/ambulance-availability',
           element:(
             <AmbulanceAvailability/>
+          )
+        },
+        {
+          path:'/map',
+          element:(
+            <Map/>
           )
         },
       ]

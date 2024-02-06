@@ -37,6 +37,7 @@ export function AmbulanceAvailability() {
             ambulanceNo={post.ambulanceNo}
             date={post.date}
             id={post.$id}
+            
             // rendering distance between teh user and driver
             distance={
               calculateDistance(location.latitude,location.longitude,post.driverLatitude,post.driverLongitude)

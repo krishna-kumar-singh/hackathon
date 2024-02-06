@@ -3,7 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     status:false,
-    userData:null
+    userData:null,
+    driverLatitude:null,
+    driverLongitude:null,
+
 }
 const authSlice=createSlice({
     name:'auth',
@@ -17,9 +20,13 @@ const authSlice=createSlice({
             state.status=false
             state.userData=null
         },
+        locate:(state,action)=>{
+            state.driverLatitude=action.payload.driverLatitude
+            state.driverLongitude=action.payload.driverLongitude
+        }
         
     }
 })
 
-export const {login,logout}=authSlice.actions
+export const {login,logout,locate}=authSlice.actions
 export default authSlice.reducer

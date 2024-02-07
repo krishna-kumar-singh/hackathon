@@ -28,7 +28,7 @@ export function Map() {
     useEffect(() => {
         if (location && !mapRef.current) {
             const { latitude, longitude } = location;
-            mapRef.current = L.map('map').setView([latitude, longitude], 19); // Set initial coordinates and zoom level
+            mapRef.current = L.map('map').setView([latitude, longitude], 13); // Set initial coordinates and zoom level
 
             // Add a tile layer (OpenStreetMap)
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

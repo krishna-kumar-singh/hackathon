@@ -3,110 +3,112 @@ import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { Select } from "../Select";
 
-export function PostForm() {
-  const [patientName, setPatientName] = useState(null);
-  const [gender, setGender] = useState("Male");
-  const [contact, setContact] = useState(null);
-  const [age, setAge] = useState(null);
-  const [address, setAddress] = useState(null);
-  const [tragedyOccur, setTragedyOccur] = useState(null);
+const backgroundImageUrl =
+  "https://img.freepik.com/free-photo/organized-desk-with-copy-space_23-2148219270.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706832000&semt=ais";
 
-  const submit = async (e) => {
+export const PostForm = () => {
+  const [patientName, setPatientName] = useState("");
+  const [gender, setGender] = useState("Male");
+  const [contact, setContact] = useState("");
+  const [age, setAge] = useState("");
+  const [address, setAddress] = useState("");
+  const [tragedyOccur, setTragedyOccur] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const dbPost = await service.createRequest({
-        date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+        date: new Date(),
         gender,
         patientName,
         address,
         contact,
         tragedyOccur,
-        age
+        age,
       });
 
       if (dbPost) {
-        console.log("successfully request get sent for collection");
-        console.log("db post :", dbPost);
-        alert("Successfully requested");
-        // navigate(`/post/${dbPost.$id}`);
+        alert("Request submitted successfully!");
+        // Additional actions after submission
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      alert("Failed to submit request. Please try again.");
     }
   };
 
   return (
-    <form
-      onSubmit={submit}
-      className="flex flex-col justify-start pb-20 mt-0 ml-0 mr-0 div1 bg-cover bg-center relative"
-      style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/organized-desk-with-copy-space_23-2148219270.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706832000&semt=ais)' }}
+    <div
+      className="flex justify-center items-center"
+      style={{
+        minHeight: "100vh",
+        background: `url(${backgroundImageUrl}) no-repeat center center fixed`,
+        backgroundSize: "cover",
+      }}
     >
-      <div className="w-full sm:w-5/6 md:w-4/6 lg:w-3/6 xl:w-3/6 px-2 my-10 pl-10 justify-start">
-        <h1 className="text-center mb-4 text-4xl font-bold font-serif">Request For an ambulance</h1>
-        <div className="mb-4">
-          <Input
-            type="text"
-            label="Patient Name :"
-            placeholder="Patient Name"
-            required
-            onChange={(e) => setPatientName(e.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <Input
-            type="number"
-            label="Patient Age :"
-            placeholder="Age"
-            required
-            onChange={(e) => setAge(e.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <Select
-            options={["Male", "Female"]}
-            label="Gender"
-            className="border-gray-300"
-            onChange={(e) => setGender(e.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <Input
-            type="text"
-            label="Tell us the tragedy: :"
-            placeholder="the tragedy that has occurred"
-            required
-            onChange={(e) => setTragedyOccur(e.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <Input
-            type="text"
-            label="Contact :"
-            placeholder="Contact"
-            required
-            onChange={(e) => setContact(e.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <Input
-            type="text"
-            label="Address :"
-            placeholder="Address"
-            required
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </div>
-
-        <Button
-        type="submit"
-        bgColor="bg-green-500"  // Use the bgColor prop to set the background color
-        className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        style={{ minWidth: "300px", maxWidth: "500px" }}
       >
-        Submit
-      </Button>
-      </div>
-    </form>
-  );
-}
+        <h1 className="text-3xl mb-4 text-center font-bold">
+          Request for an Ambulance
+        </h1>
+        <Input
+          label="Patient Name"
+          placeholder="Enter Patient Name"
+          value={patientName}
+          onChange={(e) => setPatientName(e.target.value)}
+          required
+        />
+        <Input
+          type="number"
+          label="Patient Age"
+          placeholder="Enter Patient Age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          required
+        />
+        <Select
+          label="Gender"
+          options={["Male", "Female"]}
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+          required
+        />
+        <Input
+          label="Tragedy Description"
+          placeholder="Describe the tragedy"
+          value={tragedyOccur}
+          onChange={(e) => setTragedyOccur(e.target.value)}
+          required
+        />
+        <Input
+          label="Contact"
+          placeholder="Enter Contact Number"
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
+          required
+        />
+        <Input
+          label="Address"
+          placeholder="Enter Address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          required
+        />
 
-export default PostForm;
+        <div className="flex items-center justify-center mt-6">
+          <Button
+            type="submit"
+            bgColor="bg-green-500"
+            className="w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit
+          </Button>
+        </div>
+      </form>
+    </div>
+  );
+};
+

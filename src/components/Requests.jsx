@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import { useSelector } from 'react-redux';
-import TragedyOccurCard from './tragedyOccurCard';
+import {TragedyOccurCard} from './TragedyOccurCard';
 
 //Rendering request for patient done by user.
-
-
 function Requests() {
   const authStatus = useSelector((state) => state.auth.status);
   const userData = useSelector((state) => state.auth.userData);
@@ -28,13 +26,14 @@ function Requests() {
     }
   }, [authStatus, userData.$id]);
 
-  if (posts.length==0) {
-    return <div class="bg-red-500 text-white p-2 rounded-md">No patient registered yet.</div>
+  if (posts.length === 0) {
+    return <div className="bg-red-500 text-white p-2 rounded-md">No patient registered yet.</div>;
   }
+
   return (
-    <div className='flex flex-col'>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {posts.map((post) => (
-        <div key={post.$id} className='p-2 w-full'>
+        <div key={post.$id}>
           <TragedyOccurCard
             patientName={post.patientName}
             date={post.date}

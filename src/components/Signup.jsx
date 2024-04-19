@@ -60,16 +60,13 @@ function Signup() {
     const create = async (e) => {
         e.preventDefault();
         try {
-            console.log("started")
             const userData = await authService.createAccount({
                 name,
                 email,
                 password,
             });
-            console.log("ended")
             console.log(userData)
             if (userData) {
-                console.log("inside if")
                 const currentUserData = await authService.getCurrentUser();
                 if (currentUserData) dispatch(login({userData:currentUserData}));
                 navigate('/');

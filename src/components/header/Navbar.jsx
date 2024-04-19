@@ -45,7 +45,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Requests
+              Patients
             </Link>
           </li>)}
           <li className='nav-item'>
@@ -78,7 +78,6 @@ function Navbar() {
           <Button className=' transition-all bg-yellow-500 text-black duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-yellow-500 hover:border-2 hover:border-solid mx-4'>Sign up</Button>
         </Link>
           )}
-
         {!authStatus && (
         <Link to={'/login'}>
           <Button className=' transition-all bg-green-500 duration-300 ease-out hover:bg-transparent hover:text-white hover:border-primary  hover:rounded-md hover:border-green-500 hover:border-2 hover:border-solid'>Login</Button>

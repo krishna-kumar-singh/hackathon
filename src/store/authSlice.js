@@ -1,9 +1,11 @@
 //Creating redux slice to update initial state of web app.
 import { createSlice } from "@reduxjs/toolkit";
 
+const userData=localStorage.getItem("token") || ""
+
 const initialState={
-    status:false,
-    userData:null,
+    status:userData? true: false,
+    userData:userData? userData: null,
     driverLatitude:null,
     driverLongitude:null,
 

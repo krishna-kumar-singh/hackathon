@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "../index";
 import service from "../../appwrite/config";
 import { useSelector } from "react-redux";
-import { getCurrentLocation } from "../getLocation";
+import { getCurrentLocation } from "../../utils/getLocation";
 
 const backgroundImageUrl =
   "https://img.freepik.com/free-photo/organized-desk-with-copy-space_23-2148219270.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706832000&semt=ais";

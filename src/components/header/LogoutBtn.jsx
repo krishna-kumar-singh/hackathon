@@ -9,6 +9,7 @@ export function LogoutBtn({className=''}) {
   const navigate=useNavigate()
     const dispatch=useDispatch()
     const logoutHandler=()=>{
+      localStorage.removeItem("token")
       authService.logout().then(
       ()=> {
         dispatch(logout())

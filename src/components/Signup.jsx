@@ -68,6 +68,7 @@ function Signup() {
             console.log(userData)
             if (userData) {
                 const currentUserData = await authService.getCurrentUser();
+                localStorage.setItem("token",JSON.stringify(currentUserData))
                 if (currentUserData) dispatch(login({userData:currentUserData}));
                 navigate('/');
             }

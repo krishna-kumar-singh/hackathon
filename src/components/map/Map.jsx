@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import L from 'leaflet'; // Import Leaflet library
-import { getCurrentLocation } from '../getLocation';
+import { getCurrentLocation } from '../../utils/getLocation';
 import { useSelector } from 'react-redux';
 
 export function Map() {

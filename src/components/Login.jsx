@@ -31,6 +31,7 @@ function Login() {
             const session = await authService.login({ email, password });
             if (session) {
                 const userData = await authService.getCurrentUser()
+                localStorage.setItem("token",JSON.stringify(userData))
                 if (userData) dispatch(authLogin({userData}));
                 navigate('/');
             }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import AmbulanceInfoCard from './AmbulanceInfoCard';
-import { calculateDistance, getCurrentLocation } from './getLocation';
+import { calculateDistance, getCurrentLocation } from '../utils/getLocation';
 import { useParams } from 'react-router-dom';
+import Loader from './Loader';
 
 // Rendering all the necessary information about drivers.
 export function AmbulanceAvailability() {
@@ -26,7 +27,7 @@ export function AmbulanceAvailability() {
   }, [param]);
 
   if (posts.length === 0) {
-    return <div className="bg-red-500 text-white p-2 rounded-md">No ambulances available right now.</div>;
+    return<Loader/>;
   }
 
   return (

@@ -2,32 +2,39 @@ import React, { useEffect, useState } from 'react';
 import service from '../appwrite/config';
 import { useSelector } from 'react-redux';
 import {TragedyOccurCard} from './TragedyOccurCard';
+import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
+
 
 //Rendering request for patient done by user.
 function Requests() {
+  const navigate=useNavigate()
   const authStatus = useSelector((state) => state.auth.status);
-  const userData = useSelector((state) => state.auth.userData);
+  
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (userData){
+        if (authStatus){
           const response = await service.getUserForms();
           setPosts(response.documents);
         }
       } catch (error) {
-        console.log("error in catch:", error);
+        console.log("error in request", error);
       }
     };
 
     if (authStatus) {
       fetchData();
+    }else{
+      navigate("/")
     }
-  }, [authStatus, userData.$id]);
+
+  }, [authStatus]);
 
   if (posts.length === 0) {
-    return <div className="bg-red-500 text-white p-2 rounded-md">No patient registered yet.</div>;
+    return <Loader/>;
   }
 
   return (
@@ -45,6 +52,7 @@ function Requests() {
             tragedyOccur={post.tragedyOccur}
             status={post.status}
             unique={post.unique}
+
           />
         </div>
       ))}
